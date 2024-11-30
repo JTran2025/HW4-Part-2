@@ -1,0 +1,74 @@
+<!--
+File: multtable.html
+GUI Assignment: HW4 Using the jQuery Plugin/UI with Your Dynamic Table
+Part 2: jQuery UI Slider and Tab Widgets
+Julian Tran, UMass Lowell Computer Science, Julian_Tran@student.uml.edu
+Copyright (c) 2024 by Julian. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Created on November 25, 2024
+
+This html file structures the webpage that allows the user to input the 
+number ranges of the multiplication table that is to be generated. It uses 
+a form to create input data fields for the user to type in the desired 
+numbers for the row and column ranges, labels for the specified inputs 
+and a submission button. The script tag is used to include the JQuery
+library from CDN, include the JQuery Validate plugin, and import 
+an external javascript file at the bottom of the body element.
+The button element was added for the deletion of jQuery tabs and 
+div elements were added for the tabs.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <link href="multtable.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+
+    <h3>Please enter the table ranges</h3>
+    <form id="numberForm">
+        <div class="form-group">
+            <label for="colMin">Minimum Column Value:</label>
+            <div id="colMinSlider"></div>
+            <input type="text" id="colMin" name="colMin" value="0">
+
+        </div>
+        
+        <div class="form-group">
+            <label for="colMax">Maximum Column Value:</label>
+            <div id="colMaxSlider"></div>
+            <input type="text" id="colMax" name="colMax" value="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="rowMin">Minimum Row Value:</label>
+            <div id="rowMinSlider"></div>
+            <input type="text" id="rowMin" name="rowMin" value="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="rowMax">Maximum Row Value:</label>
+            <div id="rowMaxSlider"></div>
+            <input type="text" id="rowMax" name="rowMax" value="0">
+        </div>
+
+        <input type="submit" value="Generate">
+
+    </form>
+    <button id="deleteSelectedTabs">Delete Selected Tabs</button>
+
+    <div id="tabs">
+        <ul></ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="multtable.js"></script>
+</body>
+</html>
